@@ -57,7 +57,7 @@ public class Server {
     props.put(DistributionConfig.SECURITY_CLIENT_ACCESSOR_NAME, JSONAuthorization.class.getName() + ".create");
     JSONAuthorization.setUpWithJsonFile("cacheServer.json");
     ManagementInterceptor interceptor = new ManagementInterceptor(props);
-    MBeanServerWrapper wrapper = new MBeanServerWrapper(interceptor);
+    MBeanServerWrapper wrapper = new MBeanServerWrapper();
 
     if(secure){
       //System.setProperty(JMXConnectorServer.AUTHENTICATOR, interceptor);
